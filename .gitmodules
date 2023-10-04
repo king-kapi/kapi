@@ -1,0 +1,6 @@
+[submodule "kapi-web"]
+	path = kapi-web
+	url = git@github.com:king-kapi/kapi-web.git
+[submodule "kapi-api"]
+	path = kapi-api
+	url = git@github.com:king-kapi/kapi-api.git
