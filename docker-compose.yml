@@ -1,0 +1,28 @@
+services:
+  kapi-api:
+    image: kingkapi/kapi-api
+    ports:
+      - 8080:8080
+    working_dir: /app
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+#  kapi-web:
+#    build: kapi-web
+#    ports:
+#      - 3000:3000
+#    working_dir: /app
+#    depends_on:
+#      - mongo
+#      - kapi-api
+#    env_file:
+#      - .env
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
