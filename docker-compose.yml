@@ -8,16 +8,16 @@ services:
       - mongo
     env_file:
       - .env
-#  kapi-web:
-#    build: kapi-web
-#    ports:
-#      - 3000:3000
-#    working_dir: /app
-#    depends_on:
-#      - mongo
-#      - kapi-api
-#    env_file:
-#      - .env
+  kapi-web:
+    image: kingkapi/kapi-web
+    ports:
+      - 3000:3000
+    working_dir: /app
+    depends_on:
+      - mongo
+      - kapi-api
+    env_file:
+      - .env
   mongo:
     container_name: mongo
     image: mongo:latest
